@@ -1,38 +1,221 @@
-.App {
-  text-align: center;
+.container{
+  max-width: 1172px;
+  margin-inline: auto;
+  width: 85%;
+}
+nav{
+  background-color: white;
+  margin: 2rem 0;
+ 
+ 
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.nav-container{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.menu{
+  display: none;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.nav-links{
+  display: flex;
+  gap: 1.5rem;
+}
+.nav-links li{
+  /* display: inline-block; */
+  /* margin: 0 1.5rem; */
+  position: relative;
+  cursor: pointer;
+  transition: ease-out 2s;
+ 
+}
+.nav-links li:hover::after{
+  content: '';
+  display: block;
+  border: 1px solid red;
+  position: absolute;
+  top: 3rem ;
+  width: 100%;
+}
+header{
+  background-color: #F4FAFF;
+  height: 70vh;
+  
+  
+}
+.header-container{
+  display: grid;
+  grid-template-columns: 30% 70%;
+  margin-left:  13rem;
+  
+}
+.header-right{
+  background-image: url('./images/bg-intro-desktop.svg');
+  background-position: 10rem -12rem;
+  background-size: cover;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  
+}
+.header-right img{
+  height: 50rem;
+  width: 100%;
+  object-fit: contain;
+  transform: translate(17rem, -6rem);
+}
+.header-left{
+  /* margin-top: 11rem; */
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  height: 70vh;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+.header-left button{
+  align-self: flex-start;
+}
+.service{
+  background-color: grey;
+  padding: 3rem 0;
+}
+.services-container {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem ;
+}
+.services{
+  display: flex;
+  gap: 2rem;
+}
+
+.services>div {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+.services>div img {
+  height: 4rem;
+  width: 4rem;
+}
+.article{
+  background-color: #F4FAFF;
+  padding: 2rem 0;
+}
+.articles{
+  display: flex;
+  gap: 3rem;
+}
+.articles >div{
+  width: 20rem;
+  background-color: white;
+}
+.articles>div div{
+  padding: 1.2rem;
+}
+.articles img{
+  height: 10rem;
+  width: 100%;
+  object-fit: cover;
+}
+.article h1{
+  margin-bottom: 1rem;
+}
+footer{
+  background-color: rgba(10, 0, 45,0.9);
+}
+.footer-container{
+  display: flex;
+  justify-content: space-between;
+}
+.footer-left{
+  flex: 2;
+  display: flex;
+  gap: 5rem;
+  color: #f5f5f5;
+}
+ path {
+  fill: #f5f5f5;
+}
+button{
+  padding: 0.7rem 2rem;
+  border-radius: 20px;
   color: white;
+  background: linear-gradient(to right, rgba(28, 180, 36, 0.8),rgba(0, 210, 240, 0.8));
+  cursor: pointer;
 }
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+@media screen and (max-width:600px) {
+    .nav-links{
+      display: none; 
+    }
+    .links-show{
+      display: flex;
+      width: 100%;
+      padding: 3rem 0;
+      flex-direction: column;
+      align-items: center;
+      background-color:white;
+      border-radius: 9px;
+      font-weight:500;
+      position: absolute;
+      top: 5rem;
+      z-index: 3;
+    }
+    .menu{
+      display: block;
+    }
+    .nav-container button{
+      display: none;
+    }
+  header{
+    height: fit-content;
+    padding-bottom:4rem ;
   }
-  to {
-    transform: rotate(360deg);
+  .header-container{
+    grid-template-columns: 1fr;
+    height: 100%;
+    margin-left:0;
+    
   }
+  .services,.articles,.footer-container,.footer-left{
+    flex-direction: column;
+  }
+  .services-container{
+    align-items: center;
+    text-align: center;
+  }
+  .services>div{
+    align-items: center;
+  }
+  .footer-container{
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+  }
+  .footer-left{
+    align-items: center;
+    text-align: center;
+    gap: 2rem;
+  }
+  .header-right{
+    background-position: -5rem -9rem;
+    background-size: 35rem;
+    grid-area: 1;
+  }
+  .header-left{
+    height: fit-content;
+    margin: 1.5rem;
+  }
+  .header-left button {
+    align-self: center;
+  }
+  .header-right img {
+    height: 28rem;
+    object-fit: contain;
+    transform: translate(2rem, -6rem);
+  }
+
+  
 }
