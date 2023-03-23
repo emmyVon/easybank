@@ -1,71 +1,67 @@
-.container{
+.container {
   max-width: 1172px;
   margin-inline: auto;
   width: 85%;
 }
-nav{
+nav {
   background-color: white;
   margin: 2rem 0;
- 
- 
 }
 
-.nav-container{
+.nav-container {
   display: flex;
   align-items: center;
   justify-content: space-between;
   position: relative;
 }
-.menu{
+.menu {
   display: none;
 }
-.nav-links{
+.nav-links,
+.links-show {
   display: flex;
   gap: 1.5rem;
 }
-.nav-links li{
+.nav-links li,
+.links-show li {
   /* display: inline-block; */
   /* margin: 0 1.5rem; */
   position: relative;
   cursor: pointer;
   transition: ease-out 2s;
- 
 }
-.nav-links li:hover::after{
-  content: '';
+.nav-links li:hover::after,
+.links-show li:hover::after {
+  content: "";
   display: block;
   border: 1px solid red;
   position: absolute;
-  top: 3rem ;
+  top: 3rem;
   width: 100%;
 }
-header{
-  background-color: #F4FAFF;
+header {
+  background-color: #f4faff;
   height: 70vh;
-  
-  
 }
-.header-container{
+.header-container {
   display: grid;
   grid-template-columns: 30% 70%;
-  margin-left:  13rem;
-  
+  margin-left: 13rem;
 }
-.header-right{
-  background-image: url('./images/bg-intro-desktop.svg');
+.header-right {
+  background-image: url("./images/bg-intro-desktop.svg");
   background-position: 10rem -12rem;
   background-size: cover;
   background-repeat: no-repeat;
   overflow: hidden;
-  
 }
-.header-right img{
+.header-right img {
   height: 50rem;
   width: 100%;
   object-fit: contain;
   transform: translate(17rem, -6rem);
 }
-.header-left{
+.header-left {
   /* margin-top: 11rem; */
   display: flex;
   flex-direction: column;
@@ -74,137 +70,158 @@ header{
   gap: 1.5rem;
   flex-wrap: wrap;
 }
-.header-left button{
+.header-left button {
   align-self: flex-start;
 }
-.service{
+.service {
   background-color: grey;
   padding: 3rem 0;
 }
 .services-container {
   display: flex;
   flex-direction: column;
-  gap: 3rem ;
+  gap: 3rem;
 }
-.services{
+.services {
   display: flex;
   gap: 2rem;
 }
 
-.services>div {
+.services > div {
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
 }
-.services>div img {
+.services > div img {
   height: 4rem;
   width: 4rem;
 }
-.article{
-  background-color: #F4FAFF;
+.article {
+  background-color: #f4faff;
   padding: 2rem 0;
 }
-.articles{
+.articles {
   display: flex;
   gap: 3rem;
 }
-.articles >div{
+.articles > div {
   width: 20rem;
   background-color: white;
 }
-.articles>div div{
+.articles > div div {
   padding: 1.2rem;
 }
-.articles img{
+.articles img {
   height: 10rem;
   width: 100%;
   object-fit: cover;
 }
-.article h1{
+.article h1 {
   margin-bottom: 1rem;
 }
-footer{
-  background-color: rgba(10, 0, 45,0.9);
+footer {
+  background-color: rgba(10, 0, 45, 0.9);
 }
-.footer-container{
+.footer-container {
   display: flex;
   justify-content: space-between;
 }
-.footer-left{
+.footer-left {
   flex: 2;
   display: flex;
   gap: 5rem;
   color: #f5f5f5;
 }
- path {
+path {
   fill: #f5f5f5;
 }
-button{
+button {
   padding: 0.7rem 2rem;
   border-radius: 20px;
   color: white;
-  background: linear-gradient(to right, rgba(28, 180, 36, 0.8),rgba(0, 210, 240, 0.8));
+  background: linear-gradient(to right, rgba(28, 180, 36, 0.8), rgba(0, 210, 240, 0.8));
   cursor: pointer;
 }
-@media screen and (max-width:600px) {
-    .nav-links{
-      display: none; 
-    }
-    .links-show{
-      display: flex;
-      width: 100%;
-      padding: 3rem 0;
-      flex-direction: column;
-      align-items: center;
-      background-color:white;
-      border-radius: 9px;
-      font-weight:500;
-      position: absolute;
-      top: 5rem;
-      z-index: 3;
-    }
-    .menu{
-      display: block;
-    }
-    .nav-container button{
-      display: none;
-    }
-  header{
-    height: fit-content;
-    padding-bottom:4rem ;
+main {
+  position: relative;
+}
+.dark-overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 1;
+  transition: ease 0.3s;
+}
+.no-overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+  z-index: 1;
+  transition: ease 0.3s;
+}
+@media screen and (max-width: 600px) {
+  .nav-links {
+    display: none;
   }
-  .header-container{
+  .links-show {
+    display: flex;
+    width: 100%;
+    padding: 3rem 0;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
+    border-radius: 9px;
+    font-weight: 500;
+    position: absolute;
+    top: 5rem;
+    z-index: 3;
+  }
+  .menu {
+    display: block;
+  }
+  .nav-container button {
+    display: none;
+  }
+  header {
+    height: fit-content;
+    padding-bottom: 4rem;
+  }
+  .header-container {
     grid-template-columns: 1fr;
     height: 100%;
-    margin-left:0;
-    
+    margin-left: 0;
   }
-  .services,.articles,.footer-container,.footer-left{
+  .services,
+  .articles,
+  .footer-container,
+  .footer-left {
     flex-direction: column;
   }
-  .services-container{
+  .services-container {
     align-items: center;
     text-align: center;
   }
-  .services>div{
+  .services > div {
     align-items: center;
   }
-  .footer-container{
+  .footer-container {
     align-items: center;
     justify-content: center;
     gap: 2rem;
   }
-  .footer-left{
+  .footer-left {
     align-items: center;
     text-align: center;
     gap: 2rem;
   }
-  .header-right{
+  .header-right {
     background-position: -5rem -9rem;
     background-size: 35rem;
     grid-area: 1;
   }
-  .header-left{
+  .header-left {
     height: fit-content;
     margin: 1.5rem;
   }
@@ -216,6 +233,4 @@ button{
     object-fit: contain;
     transform: translate(2rem, -6rem);
   }
-
-  
 }
